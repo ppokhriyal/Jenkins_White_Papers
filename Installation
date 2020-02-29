@@ -1,0 +1,40 @@
+Prerequisites
+=============
+
+A machine with:
+	
+	1 . 512 MB of RAM
+	2 . 10 GB Disk space
+
+The following software need to be installed:
+
+	1 . Java 8 or 11
+
+
+In this installation documentatin i am going to use Ubuntu 18.04 LTS.
+
+Let's start installing Jenkins
+
+- sudo apt-get install -y openjdk-8-jdk
+
+- wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add -
+
+- echo deb https://pkg.jenkins.io/debian-stable binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list
+
+- sudo apt-get update
+
+- sudo apt-get install jenkins
+
+- sudo systemctl start jenkins
+
+By default Jenkins runs on port 8080, so we'll open the port using ufw
+
+- sudo ufw allow OpenSSH
+
+- sudo ufw enable
+
+- sudo ufw allow 8080
+
+- sudo ufw status
+
+Now open the browser with url : http://localhost:8080 and follow the instructions
